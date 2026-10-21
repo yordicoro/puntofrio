@@ -21,7 +21,7 @@
     background:radial-gradient(circle at 50% -10%, var(--green) 0%, var(--green-deep) 70%);
     color:var(--cream);
     text-align:center;
-    padding:36px 20px 28px;
+    padding:20px 20px 18px;
     position:relative;
     overflow:hidden;
   }
@@ -39,7 +39,7 @@
     border-radius:50%;
     border:3px solid var(--orange-light);
     box-shadow:0 6px 20px rgba(0,0,0,0.35);
-    margin-bottom:14px;
+    margin-bottom:8px;
   }
   .hero h1{
     font-family:'Fraunces', serif;
@@ -134,7 +134,7 @@
     align-items:center;
     justify-content:center;
     gap:8px;
-    margin:8px auto 2px;
+    margin:4px auto 2px;
     padding:6px 12px;
     border:1px solid rgba(79,93,47,.24);
     border-radius:999px;
