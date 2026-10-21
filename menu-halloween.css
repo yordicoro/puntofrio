@@ -20,6 +20,12 @@ body.theme-halloween .hero {
 }
 
 body.theme-halloween .hero::after { background:var(--cream); }
+body.theme-halloween .store-hours {
+  color:#FFF8EE;
+  border-color:rgba(255,181,107,.62);
+  background:rgba(43,28,50,.78);
+}
+body.theme-halloween .store-hours-label { color:#FFD19A; }
 body.theme-halloween .seasonal-label {
   position:relative;
   display:inline-block;
@@ -53,6 +59,7 @@ body.theme-halloween .seasonal-label::after {
 
 body.theme-halloween .topbar { background:var(--paper); }
 body.theme-halloween .topbar-delivery { color:#493651; }
+body.theme-halloween .topbar-delivery-hours { color:#65586A; }
 body.theme-halloween .topbar-location {
   color:#FFD19A;
   background:#493651;
