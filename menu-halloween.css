@@ -52,6 +52,13 @@ body.theme-halloween .seasonal-label::after {
 }
 
 body.theme-halloween .topbar { background:var(--paper); }
+body.theme-halloween .topbar-delivery { color:#493651; }
+body.theme-halloween .topbar-location {
+  color:#FFD19A;
+  background:#493651;
+  border:1px solid rgba(255,181,107,.65);
+}
+body.theme-halloween .topbar-location:hover { background:#5A3D63; }
 body.theme-halloween .hamburger { background:var(--cream-2); }
 body.theme-halloween .hamburger:active { background:#F6D3AE; }
 body.theme-halloween .hamburger span { background:var(--olive-deep); }
