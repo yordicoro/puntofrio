@@ -268,8 +268,8 @@
     margin:0 auto 16px;
     font-size:0.82rem;
     line-height:1.5;
-    color:var(--green-deep);
-    opacity:0.9;
+    color:var(--ink);
+    opacity:1;
   }
   .store-locations{
     display:grid;
@@ -317,7 +317,7 @@
     margin:0;
     font-size:0.82rem;
     line-height:1.55;
-    color:var(--green-deep);
+    color:var(--ink);
   }
 
   @media (min-width:640px){
@@ -547,7 +547,7 @@ footer{opacity:1;}
 .social-links a{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   min-height:44px; padding:10px 16px; border:1px solid #D4CDBB; border-radius:24px;
-  color:var(--green-deep); background:var(--paper); text-decoration:none;
+  color:#4F5D2F; background:var(--paper); text-decoration:none;
   font-size:.85rem; font-weight:600;
 }
 .social-links svg{width:19px; height:19px; flex-shrink:0;}
