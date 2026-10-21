@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punto Frio - Especial Halloween</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="menu-halloween.css">
+</head>
+<body class="theme-halloween">
+
+<!-- <div class="seasonal-ribbon" id="seasonalRibbon" role="status" hidden>
+  <span>Octubre morado</span>
+  <span>Sabores para compartir</span>
+</div> -->
+
+<div class="hero">
+  <span class="halloween-web halloween-web-left" aria-hidden="true"></span>
+  <span class="halloween-web halloween-web-right" aria-hidden="true"></span>
+  <span class="halloween-skull" aria-hidden="true"></span>
+  <img src="LogoPuntoFrio.png" alt="Punto Frío — Sabor y frescura" style="width:min(180px,72vw);height:auto;object-fit:contain;border-radius:0;border:0;box-shadow:none;">
+  
+  
+  <p class="seasonal-label">Especial de Halloween</p>
+</div>
+
+<div class="topbar">
+  <div class="brand">
+    <img src="LogoPuntoFrio.png" alt="Punto Frío" style="width:76px;height:44px;object-fit:cover;object-position:center 52%;border-radius:0;border:0;">
+    
+  </div>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú de categorías" aria-expanded="false" aria-controls="menuDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="menu-drawer" id="menuDrawer" role="dialog" aria-modal="true" aria-label="Categorías" inert>
+  <div class="menu-drawer-head">
+    <span>Categorías</span>
+    <button id="closeDrawerBtn" aria-label="Cerrar menú">&times;</button>
+  </div>
+  <nav id="catnav">
+    <div class="group-label">Bebidas</div>
+    <a href="#jugos-combinados">Jugos Combinados</a>
+    <a href="#jugos-clasicos">Jugos Clásicos</a>
+    <a href="#jugos-leche">Jugos con Leche</a>
+    <a href="#iced-coffee">Iced Coffee</a>
+    <a href="#frappes-cafe">Frappés con café</a>
+    <a href="#frappes-fruta">Frappés con fruta</a>
+    <a href="#cafe">Café</a>
+    <a href="#infusiones">Infusiones</a>
+    <a href="#sodas">Sodas</a>
+    <a href="#frozen">Frozen</a>
+    <a href="#limonadas">Limonadas</a>
+    <a href="#mojitos">Mojitos</a>
+    <a href="#chilcanitos">Chilcanitos</a>
+    <a href="#cocteles">Cócteles</a>
+    <div class="group-label">Comida</div>
+    <a href="#desayunos">Desayunos</a>
+    <a href="#sandwich">Sándwich</a>
+    <a href="#empanadas">Empanadas</a>
+    <a href="#humitas">Humitas</a>
+    <a href="#ensaladas">Ensalada de fruta</a>
+    <div class="group-label">Dulces</div>
+    <a href="#postres">Postres</a>
+    <a href="#rollos">Rollos de canela</a>
+  </nav>
+</aside>
+<!-- Carrusel -->
+<section class="carousel-section" aria-label="Recomendados">
+  <h2>El sabor, en su punto</h2>
+  <div class="carousel">
+    <div class="carousel-track" id="recoTrack">
+      <!-- Rollos -->
+      <a class="carousel-card" href="#rollos">
+        <img src="./img/rollos/rollito_dulcel.png" alt="Rollo con dulce de leche">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Rollo con dulce de leche</div>
+          <div class="carousel-card-price">11.00</div>
+        </div>
+      </a>
+      <!-- Frappes -->
+      <a class="carousel-card" href="#frappes-fruta">
+        <img src="./img/frappe_fruta/frappe_arandano.png" alt="Frappé de arándano">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Frappé de arándano</div>
+          <div class="carousel-card-price">15.00</div>
+        </div>
+      </a>
+      <!-- Sandwich -->
+      <!-- <a class="carousel-card" href="#sandwich">
+        <img src="./img/sandwich/club_sandwich.png" alt="Club Sándwich">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Club Sándwich</div>
+          <div class="carousel-card-price">20.00</div>
+        </div>
+      </a> -->
+      <!-- Hamburguesas -->
+      <!-- <a class="carousel-card" href="#hamburguesas">
+        <img src="./img/hamburguesas/hamburguesa_royal.png" alt="Hamburguesa Royal">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Hamburguesa Royal</div>
+          <div class="carousel-card-price">12.00</div>
+        </div>
+      </a> -->
+      <!-- Postres -->
+      <a class="carousel-card" href="#postres">
+        <img src="./img/postres/crema_volteada.png" alt="Crema volteada">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Crema volteada</div>
+          <div class="carousel-card-price">10.00</div>
+        </div>
+      </a>
+      <!-- Cocteles -->
+      <a class="carousel-card" href="#cocteles">
+        <img src="./img/cocteles/machu_picchu.png" alt="Machu Picchu">
+        <div class="carousel-card-info">
+          <div class="carousel-card-name">Machu Picchu</div>
+          <div class="carousel-card-price">15.00</div>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-dots" id="recoDots"></div>
+  </div>
+</section>
+
+<main>
+
+<section class="category" id="jugos-combinados">
+  <h2>Jugos Combinados</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano, fresa y mango</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/jugos_combinados/maracumango.png">
+    <div class="item-info"><div class="item-name">Maracumango</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Fresa con mango</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Maracufresa</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Maracupiña</div></div>
+    <div class="item-price">12.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Naranja con maracuyá</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Naranja, papaya y piña</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Papaya, fresa y plátano</div></div>
+    <div class="item-price">12.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Guanábana con granadilla</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Granadilla con piña</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Papaya con piña</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+</section>
+
+<section class="category" id="jugos-clasicos">
+  <h2>Jugos Clásicos</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Fresa</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Mango</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Maracuyá</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Naranja</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Piña</div></div>
+    <div class="item-price">8.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Surtido</div></div>
+    <div class="item-price">9.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Guanábana</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Papaya</div></div>
+    <div class="item-price">8.00</div>
+  </div>
+</section>
+
+<section class="category" id="jugos-leche">
+  <h2>Jugos con Leche</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano, fresa, mango y leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano, fresa y leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano, mango y leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Arándano y leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/jugos_leche/fresa_leche.png">
+    <div class="item-info"><div class="item-name">Fresa con leche</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Mango con leche</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Lúcuma con leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Guanábana con leche</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Plátano con leche</div></div>
+    <div class="item-price">12.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Lúcuma, fresa con leche</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Fresa, mango con leche</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Fresa, plátano con leche</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Especial</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+</section>
+
+<section class="category" id="iced-coffee">
+  <h2>Iced Coffee</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/iced_coffe/cold_brew_naranja.png">
+    <div class="item-info"><div class="item-name">Cold brew naranja</div><div class="item-desc">Naranja</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/iced_coffe/cold_brew_fresa.png">
+    <div class="item-info"><div class="item-name">Cold brew fresa</div><div class="item-desc">fresa</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Cold brew arándano</div><div class="item-desc">arándano</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/iced_coffe/cold_brew_maracuya.png">
+    <div class="item-info"><div class="item-name">Cold brew maracuyá</div><div class="item-desc">maracuyá</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/iced_coffe/iced_americano.png">
+    <div class="item-info"><div class="item-name">Iced americano</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Iced coffee con leche caramelo</div><div class="item-desc">Caramelo</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Iced coffee con leche chocolate</div><div class="item-desc">chocolate</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/iced_coffe/iced_coffe_avellanas.png">
+    <div class="item-info"><div class="item-name">Iced coffee con leche avellanas</div><div class="item-desc">avellanas</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Iced coffee con leche vainilla</div><div class="item-desc">vainilla</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Iced coffee clásico</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+</section>
+
+<section class="category" id="frappes-cafe">
+  <h2>Frappés con café</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de frutos del marañón</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de Nutella</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de Oreo</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de chocolate</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frappe_cafe/frappe_caramelo.png">
+    <div class="item-info"><div class="item-name">Frappé de caramelo</div></div>
+    <div class="item-price">15.00</div>f
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé clásico</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+</section>
+
+<section class="category" id="frappes-fruta">
+  <h2>Frappés con fruta</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/frappe_fruta/frappe_maracumango.png">
+    <div class="item-info"><div class="item-name">Frappé de maracumango</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de maracufresa</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frappe_fruta/frappe_fresa.png">
+    <div class="item-info"><div class="item-name">Frappé de fresa</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de mango</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de coco</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frappe_fruta/frappe_arandano.png">
+    <div class="item-info"><div class="item-name">Frappé de arándano</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de guanábana</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de lúcuma</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Frappé de maracuyá</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+</section>
+
+<section class="category" id="cafe">
+  <h2>Café</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Café americano</div></div>
+    <div class="item-price">6.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Capuchino clásico</div></div>
+    <div class="item-price">9.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Capuchino con chantilly</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Chocolate con leche</div></div>
+    <div class="item-price">9.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Chocolate con chantilly</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Espresso</div></div>
+    <div class="item-price">6.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Capuchino</div><div class="item-desc">Avellanas, caramelo, chocolate o Nutella</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Latte</div></div>
+    <div class="item-price">8.00</div>
+  </div>
+</section>
+
+<section class="category" id="infusiones">
+  <h2>Infusiones</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Infusión</div><div class="item-desc">Menta, Jamaica, hierba luisa, manzanilla o mate de coca</div></div>
+    <div class="item-price">7.00</div>
+  </div>
+</section>
+
+<section class="category" id="sodas">
+  <h2>Sodas</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/sodas/soda_fresa.png">
+    <div class="item-info"><div class="item-name">Soda de fresa</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/sodas/soda_frutos_rojos.png">
+    <div class="item-info"><div class="item-name">Soda de frutos rojos</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/sodas/soda_manzana.png">
+    <div class="item-info"><div class="item-name">Soda de manzana</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/sodas/soda_maracuya.png">
+    <div class="item-info"><div class="item-name">Soda de maracuyá</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+</section>
+
+<section class="category" id="frozen">
+  <h2>Frozen</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/frozen/frozen_pina_hierbal.png">
+    <div class="item-info"><div class="item-name">Piña con hierba luisa frozen</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frozen/frozen_huierbal_limon.png">
+    <div class="item-info"><div class="item-name">Hierba luisa y limón frozen</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frozen/frozen_maracumango.png">
+    <div class="item-info"><div class="item-name">Maracumango frozen</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Maracufresa frozen</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Limón con fresa frozen</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Limonada frozen</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Naranja frozen</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Piña frozen</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Fresa frozen</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Maracuyá frozen</div></div>
+    <div class="item-price">13.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/frozen/frozen_fresa_leche.png">
+    <div class="item-info"><div class="item-name">Fresa con leche frozen</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Lúcuma con leche frozen</div></div>
+    <div class="item-price">16.00</div>
+  </div>
+</section>
+
+<section class="category" id="limonadas">
+  <h2>Limonadas</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/limonadas/limonada_hierbal.png">
+    <div class="item-info"><div class="item-name">Limonada con hierba luisa</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/limonadas/limonada_jamaica.png">
+    <div class="item-info"><div class="item-name">Limonada con Jamaica</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/limonadas/limonada_rosa.png">
+    <div class="item-info"><div class="item-name">Limonada rosada</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Limonada clásica</div></div>
+    <div class="item-price">12.00</div>
+  </div>
+</section>
+
+<section class="category" id="mojitos">
+  <h2>Mojitos</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Mojito (con ron)</div><div class="item-desc">Fresa, arándanos, maracuyá o limón</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+</section>
+
+<section class="category" id="chilcanitos">
+  <h2>Chilcanitos</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Chilcanito (con pisco)</div><div class="item-desc">Fresa, arándanos, maracuyá o limón</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+</section>
+
+<section class="category" id="cocteles">
+  <h2>Cócteles</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/cocteles/machu_picchu.png">
+    <div class="item-info"><div class="item-name">Machu Picchu</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sangría</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Daiquiri frozen</div><div class="item-desc">Fresa, maracuyá o maracumango</div></div>
+    <div class="item-price">16.00</div>
+  </div>
+</section>
+
+<section class="category" id="desayunos">
+  <h2>Desayunos</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Desayuno en su punto</div><div class="item-desc">Tocino, huevo revuelto, palta y tostada; elige café, capuchino o jugo de papaya o piña</div></div>
+    <div class="item-price">25.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Desayuno serranito</div><div class="item-desc">Dos huevos fritos y humita; elige café o jugo de papaya o piña</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+</section>
+
+<section class="category" id="sandwich">
+  <h2>Sándwich</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sándwich hawaiano</div><div class="item-desc">Pollo, huevo, jamón, queso y piña hawaiana</div></div>
+    <div class="item-price">16.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sándwich clásico</div><div class="item-desc">Pollo, jamón y queso</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sándwich especial</div><div class="item-desc">Pollo, jamón, queso, huevo, tomate y lechuga</div></div>
+    <div class="item-price">15.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sándwich simple</div><div class="item-desc">Jamón y queso</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Sándwich mixto</div><div class="item-desc">Pollo, lechuga y huevo</div></div>
+    <div class="item-price">12.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Club sándwich</div><div class="item-desc">Tres capas de pan, tocino, huevo, pollo, jamón, queso, lechuga y tomate</div></div>
+    <div class="item-price">20.00</div>
+  </div>
+</section>
+
+<section class="category" id="empanadas">
+  <h2>Empanadas</h2>
+  <div class="divider"></div>
+  <div class="item item-preview" data-images="img/empanadas/empanada_pollo.png">
+    <div class="item-info"><div class="item-name">Empanada de pollo</div><div class="item-desc">Relleno de pollo</div></div>
+    <div class="item-price">7.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Empanada de carne</div><div class="item-desc">Relleno de carne</div></div>
+    <div class="item-price">7.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Empanada de jamón con queso</div><div class="item-desc">Relleno de jamón con queso</div></div>
+    <div class="item-price">7.00</div>
+  </div>
+</section>
+
+<section class="category" id="humitas">
+  <h2>Humitas</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Humitas de queso</div></div>
+    <div class="item-price">6.00</div>
+  </div>
+</section>
+
+<section class="category" id="ensaladas">
+  <h2>Ensalada de fruta</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Ensalada de fruta</div></div>
+    <div class="item-price">14.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Yogurt frutado</div></div>
+    <div class="item-price">8.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Yogurt con cereal</div></div>
+    <div class="item-price">6.00</div>
+  </div>
+</section>
+
+<section class="category" id="postres">
+  <h2>Postres</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Tres leches</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Tres leches con café</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Cheesecake surtido</div><div class="item-desc">Maracuyá, arándano, fresa o choco-oreo</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Torta de chocolúcuma</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Selva negra</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/postres/crema_volteada.png">
+    <div class="item-info"><div class="item-name">Crema volteada</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Pie de limón</div></div>
+    <div class="item-price">10.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Kekes</div></div>
+    <div class="item-price">6.00</div>
+  </div>
+</section>
+
+<section class="category" id="rollos">
+  <h2>Rollos de canela</h2>
+  <div class="divider"></div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Rollo con arándanos</div><div class="item-desc">Arándano</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Rollo con nutella</div><div class="item-desc">Nutella</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/rollos/rollito_maracuya.png">
+    <div class="item-info"><div class="item-name">Rollo con maracuyá</div><div class="item-desc">Maracuyá</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Rollo con manjar</div><div class="item-desc">Manjar</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/rollos/rollito_dulcel.png">
+    <div class="item-info"><div class="item-name">Rollo con dulce de leche</div><div class="item-desc">Dulce de leche</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/rollos/rollito_oreo.png">
+    <div class="item-info"><div class="item-name">Rollo con Oreo</div><div class="item-desc">Oreo</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Rollo con frutos secos</div><div class="item-desc">Frutos secos</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info"><div class="item-name">Rollo salado</div><div class="item-desc">Tocino, queso, jamón y orégano</div></div>
+    <div class="item-price">11.00</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="fline"></div>
+  <p class="footer-intro">Punto Frío ·  "Ponle un punto fresco a tu día"</p>
+  <div class="store-locations" aria-label="Direcciones de los locales">
+    <a class="store-card" href="https://maps.app.goo.gl/sq9azFtNWfjnHmBv8" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Pasaje bracamoros 160, Jaén, Peru, 06801 en Google Maps (abre en otra pestaña)">
+      <span class="store-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>UBICANOS EN:</span>
+      <p>Pasaje bracamoros #160, Plaza de armas,Jaén </p>
+    </a>
+  </div>
+  <nav class="social-links" aria-label="Redes sociales">
+    <a href="https://www.instagram.com/puntofrio0/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Punto Frío (abre en otra pestaña)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.tiktok.com/@punto.frio.jan._.c" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Punto Frío (abre en otra pestaña)">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.6 2h-3.2v13.2a2.8 2.8 0 1 1-2.4-2.8V9.1a6 6 0 1 0 5.6 6V8.4a8.2 8.2 0 0 0 4.8 1.5V6.7A4.8 4.8 0 0 1 16.6 2Z"/></svg>
+      <span>TikTok</span>
+    </a>
+  </nav>
+</footer>
+
+<dialog class="product-sheet" id="productSheet" aria-labelledby="previewName" aria-describedby="previewDescription previewNote">
+  <div class="sheet-handle" aria-hidden="true"></div>
+  <button class="sheet-close" type="button" aria-label="Cerrar vista del producto" autofocus>&times;</button>
+  <div class="preview-gallery" id="previewGallery" role="region" aria-label="Fotografías del producto" tabindex="0"></div>
+  <div class="preview-dots" id="previewDots" aria-label="Elegir fotografía" hidden></div>
+  <div class="preview-content">
+    <p class="preview-category" id="previewCategory"></p>
+    <div class="preview-heading"><h2 id="previewName"></h2><p class="preview-price" id="previewPrice"></p></div>
+    <p id="previewDescription"></p>
+    <p class="preview-note" id="previewNote">Imagen referencial</p>
+  </div>
+</dialog>
+<script src="menu.js" defer></script>
+
+</body>
+</html>
