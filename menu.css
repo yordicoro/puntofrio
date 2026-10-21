@@ -135,20 +135,21 @@
     position:relative;
     z-index:1;
     display:inline-flex;
-    flex-direction:column;
+    flex-direction:row;
     align-items:center;
     justify-content:center;
-    gap:2px;
+    gap:0;
     margin:2px auto 0;
-    padding:5px 14px;
+    padding:4px 10px;
     border:1px solid rgba(79,93,47,.24);
     border-radius:999px;
     background:rgba(255,253,248,.88);
     color:#4F5D2F;
-    font-size:.72rem;
-    line-height:1.1;
+    font-size:.68rem;
+    line-height:1.2;
   }
   .store-hours-label{font-size:.64rem;font-weight:700;}
+  .store-hours-label::after{content:"·";margin:0 7px;color:var(--orange);}
   .hamburger{
     width:42px; height:42px;
     border-radius:10px;
