@@ -7,10 +7,11 @@
     month: '2-digit'
   }).formatToParts(new Date());
   const limaDateParts = Object.fromEntries(limaDate.map(({type, value}) => [type, value]));
+  const seasonalRibbon = document.getElementById('seasonalRibbon');
   const isOctoberMoradoCampaign = limaDateParts.year === '2026' && limaDateParts.month === '10';
-  if (isOctoberMoradoCampaign) {
+  if (isOctoberMoradoCampaign && seasonalRibbon) {
     document.body.classList.add('octubre-morado');
-    document.getElementById('seasonalRibbon').hidden = false;
+    seasonalRibbon.hidden = false;
   }
 
   const drawer = document.getElementById('menuDrawer');
