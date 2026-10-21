@@ -1,6 +1,6 @@
 :root{
-    --green-deep:#123C2C;
-    --green:#1B5E3F;
+    --green-deep:#D6CEB8;
+    --green:#D6CEB8;
     --orange:#DB7B2B;
     --orange-light:#F0A15C;
     --cream:#FBF5E9;
@@ -197,7 +197,7 @@
     font-family:'Fraunces', serif;
     font-weight:700;
     font-size:1.35rem;
-    color:var(--green-deep);
+    color:#4F5D2F;
     display:flex;
     align-items:center;
     gap:10px;
@@ -459,8 +459,8 @@
 /* Shared product preview: the menu remains a compact text list. */
 .item-info{min-width:0;}
 .item-desc{color:#6E614E; font-size:.85rem; line-height:1.45;}
-.item-price{color:var(--green-deep);}
-.item-price::before{color:#6E614E;}
+.item-price{color:#4F5D2F;}
+.item-price::before{color:#4F5D2F;}
 .item-preview{cursor:pointer; min-height:48px; border-radius:6px; transition:background .15s ease;}
 .item-preview .item-name{line-height:1.5;}
 .photo-icon{display:inline-block; width:17px; height:17px; margin-left:6px; vertical-align:-2px; color:var(--green); flex-shrink:0;}
