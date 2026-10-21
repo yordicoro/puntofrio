@@ -68,6 +68,26 @@ body.theme-halloween .menu-drawer a:active,
 body.theme-halloween .menu-drawer a.active { color:var(--olive-deep); }
 body.theme-halloween .menu-drawer a:active,
 body.theme-halloween .menu-drawer a.active { background:var(--cream-2); }
+body.theme-halloween .menu-drawer-head { color:#FFD19A; }
+body.theme-halloween .menu-drawer-head span::before {
+  content:"\01F383";
+  margin-right:8px;
+}
+body.theme-halloween .menu-drawer .group-label {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--orange);
+}
+body.theme-halloween .menu-drawer .group-label::before {
+  content:"\01F383";
+  font-size:.9rem;
+}
+body.theme-halloween .menu-drawer a:active,
+body.theme-halloween .menu-drawer a.active {
+  border-left-color:var(--orange);
+  color:var(--olive-deep);
+}
 
 body.theme-halloween section.category h2,
 body.theme-halloween .carousel-section h2 { color:var(--olive-deep); }
@@ -102,6 +122,13 @@ body.theme-halloween footer {
 body.theme-halloween .footer-intro,
 body.theme-halloween .store-card,
 body.theme-halloween .store-card p { color:#FFF8EE; }
+body.theme-halloween .store-label {
+  color:#FFD19A;
+  padding:7px 10px;
+  border:1px solid rgba(255,181,107,.55);
+  border-radius:999px;
+  background:rgba(184,80,29,.2);
+}
 body.theme-halloween .store-card {
   background:rgba(255,255,255,.07);
   border-color:rgba(255,248,238,.24);
