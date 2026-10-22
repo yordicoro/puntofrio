@@ -1,31 +1,9 @@
-/* Halloween de Punto Frío: conserva la paleta de marca y agrega detalles de temporada. */
-body.theme-halloween {
-  --green-deep:#435130;
-  --green:#748349;
-  --olive-deep:#4F5D2F;
-  --orange:#DB7B2B;
-  --orange-light:#F0A15C;
-  --cream:#FBF5E9;
-  --cream-2:#F3ECDC;
-  --ink:#2A2118;
-  --paper:#FFFDF8;
-  background:var(--cream);
-  color:var(--ink);
-}
-
-body.theme-halloween .hero {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(240,161,92,.2), transparent 58%),
-    linear-gradient(145deg, var(--green-deep), var(--green) 68%, #657542);
-}
-
-body.theme-halloween .hero::after { background:var(--cream); }
+/* Halloween de Punto Frío: conserva la paleta de menu.css y agrega adornos de temporada. */
 body.theme-halloween .store-hours {
   color:var(--olive-deep);
-  border-color:rgba(79,93,47,.3);
-  background:rgba(255,253,248,.95);
+  border-color:rgba(79,93,47,.24);
+  background:rgba(255,253,248,.88);
 }
-body.theme-halloween .store-hours-label { color:var(--olive-deep); }
 
 body.theme-halloween .seasonal-label {
   position:relative;
@@ -34,8 +12,8 @@ body.theme-halloween .seasonal-label {
   padding:6px 14px;
   border:1px solid rgba(240,161,92,.75);
   border-radius:999px;
-  background:rgba(63,76,43,.28);
-  color:#FFF9EE;
+  background:rgba(255,253,248,.7);
+  color:var(--olive-deep);
   font-size:.75rem;
   font-weight:700;
   letter-spacing:1.2px;
@@ -76,15 +54,15 @@ body.theme-halloween .menu-overlay { background:rgba(42,33,24,.58); }
 body.theme-halloween .menu-drawer { background:var(--paper); }
 body.theme-halloween .menu-drawer-head {
   background:var(--green-deep);
-  color:var(--cream);
+  color:var(--olive-deep);
 }
-body.theme-halloween .menu-drawer-head button { color:var(--cream); }
+body.theme-halloween .menu-drawer-head button { color:var(--olive-deep); }
 body.theme-halloween .menu-drawer .group-label,
 body.theme-halloween .menu-drawer a:active,
 body.theme-halloween .menu-drawer a.active { color:var(--olive-deep); }
 body.theme-halloween .menu-drawer a:active,
 body.theme-halloween .menu-drawer a.active { background:var(--cream-2); }
-body.theme-halloween .menu-drawer-head { color:#FFF9EE; }
+body.theme-halloween .menu-drawer-head { color:var(--olive-deep); }
 body.theme-halloween .menu-drawer-head span::before {
   content:"\01F383";
   margin-right:8px;
@@ -133,13 +111,13 @@ body.theme-halloween .carousel-card.active {
 
 body.theme-halloween footer {
   background:var(--green-deep);
-  color:var(--cream);
+  color:var(--olive-deep);
 }
 body.theme-halloween .footer-intro,
 body.theme-halloween .store-card,
-body.theme-halloween .store-card p { color:var(--cream); }
+body.theme-halloween .store-card p { color:var(--olive-deep); }
 body.theme-halloween .store-label {
-  color:#FFF9EE;
+  color:var(--olive-deep);
   padding:7px 10px;
   border:1px solid rgba(240,161,92,.55);
   border-radius:999px;
@@ -151,11 +129,11 @@ body.theme-halloween .store-card {
 }
 body.theme-halloween .store-card:hover { background:rgba(255,255,255,.14); }
 body.theme-halloween .social-links a {
-  color:var(--cream);
-  background:#53643A;
-  border-color:rgba(255,253,248,.3);
+  color:var(--olive-deep);
+  background:var(--cream-2);
+  border-color:rgba(79,93,47,.26);
 }
-body.theme-halloween .social-links a:hover { background:#657542; }
+body.theme-halloween .social-links a:hover { background:#E9E1CF; }
 
 body.theme-halloween .product-sheet { background:var(--paper); }
 body.theme-halloween .product-sheet::backdrop { background:rgba(42,33,24,.58); }
@@ -188,6 +166,7 @@ body.theme-halloween .halloween-skull {
 body.theme-halloween .halloween-web {
   top:10px;
   font-size:clamp(2.2rem, 9vw, 3.6rem);
+  color:var(--olive-deep);
   opacity:.76;
   filter:drop-shadow(0 2px 4px rgba(42,33,24,.25));
 }
