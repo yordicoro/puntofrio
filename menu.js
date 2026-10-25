@@ -28,6 +28,8 @@
   let savedScroll = 0;
   let savedBodyStyle;
   let opener;
+  let activeImageDescriptions = [];
+  let activeProductDescription = '';
   let closing = false;
   let closeTimer;
 
@@ -264,6 +266,10 @@
     [...dots.children].forEach((dot, i) => {
       dot.setAttribute('aria-pressed', String(i === index));
     });
+    const description = document.getElementById('previewDescription');
+    const text = activeImageDescriptions[index] || activeProductDescription;
+    description.textContent = text;
+    description.hidden = !text;
   }
   const pendingImageLoads = new Set();
   function clearImageLoading() {
@@ -311,9 +317,8 @@
     document.getElementById('previewName').textContent = name;
     document.getElementById('previewPrice').textContent = `S/ ${item.querySelector('.item-price').textContent.trim()}`;
     document.getElementById('previewCategory').textContent = item.closest('.category').querySelector('h2').textContent;
-    const description = document.getElementById('previewDescription');
-    description.textContent = item.dataset.description || item.querySelector('.item-desc')?.textContent || '';
-    description.hidden = !description.textContent;
+    activeProductDescription = item.dataset.description || item.querySelector('.item-desc')?.textContent || '';
+    activeImageDescriptions = (item.dataset.imageDescriptions || '').split('|').map(text => text.trim()).filter(Boolean);
     resetZoom();
     clearImageLoading();
     zoomControllers.clear();
