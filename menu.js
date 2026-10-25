@@ -235,7 +235,13 @@
         viewport.scrollTop -= dy;
         viewport.classList.add('is-dragging');
       } else if (event.pointerType !== 'mouse') {
-        axis ||= Math.abs(totalX)>Math.abs(totalY) ? 'x' : 'y';
+        if (!axis) {
+          const horizontal = Math.abs(totalX), vertical = Math.abs(totalY);
+          if (Math.max(horizontal, vertical) < 8) return;
+          if (horizontal >= vertical * 1.15) axis = 'x';
+          else if (vertical >= horizontal * 1.15) axis = 'y';
+          else return;
+        }
         if (axis==='x') { gallery.classList.add('is-swiping'); gallery.scrollLeft -= dx; }
         else sheet.scrollTop -= dy;
       }
