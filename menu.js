@@ -162,14 +162,14 @@
     viewport.className = 'image-viewport';
     viewport.tabIndex = 0;
     viewport.setAttribute('role', 'group');
-    viewport.setAttribute('aria-label', 'Imagen: separa dos dedos para ampliar y arrastra para explorar. Con teclado, Enter amplía o reduce y las flechas desplazan.');
+    viewport.setAttribute('aria-label', 'Imagen: desliza para cambiar de fotograf\u00eda. Pellizca para ampliar y arrastra para explorarla. Con teclado, Enter ampl\u00eda o reduce y las flechas desplazan.');
     const surface = document.createElement('div');
     surface.className = 'image-surface';
     surface.appendChild(image);
     viewport.appendChild(surface);
     slide.appendChild(viewport);
     image.draggable = false;
-    let scale = 1, pinch = null, moved = false, axis = null, swipeStartPage = 0;
+    let scale = 1, pinch = null, moved = false;
     const pointers = new Map();
     function reset() {
       scale = 1;
@@ -208,13 +208,9 @@
     }
     viewport.addEventListener('pointerdown', event => {
       if (event.button !== 0) return;
-      if (!pointers.size) {
-        moved = false;
-        axis = null;
-        swipeStartPage = Math.round(gallery.scrollLeft / Math.max(1, gallery.clientWidth));
-      }
-      pointers.set(event.pointerId, {x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,startTime:performance.now()});
-      viewport.setPointerCapture(event.pointerId);
+      if (!pointers.size) moved = false;
+      pointers.set(event.pointerId, {x:event.clientX,y:event.clientY});
+      if (event.pointerType === 'mouse' || scale > 1) viewport.setPointerCapture(event.pointerId);
       if (pointers.size === 2) { pinch = {...pair(), scale}; moved = true; }
     });
     viewport.addEventListener('pointermove', event => {
@@ -234,41 +230,15 @@
         viewport.scrollLeft -= dx;
         viewport.scrollTop -= dy;
         viewport.classList.add('is-dragging');
-      } else if (event.pointerType !== 'mouse') {
-        if (!axis) {
-          const horizontal = Math.abs(totalX), vertical = Math.abs(totalY);
-          if (Math.max(horizontal, vertical) < 8) return;
-          if (horizontal >= vertical * 1.15) axis = 'x';
-          else if (vertical >= horizontal * 1.15) axis = 'y';
-          else return;
-        }
-        if (axis==='x') { gallery.classList.add('is-swiping'); gallery.scrollLeft -= dx; }
-        else sheet.scrollTop -= dy;
       }
     });
     function finishPointer(event) {
       if (!pointers.has(event.pointerId)) return;
-      const pointer = pointers.get(event.pointerId);
       pointers.delete(event.pointerId);
       if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
       if (pointers.size<2) pinch=null;
       if (!pointers.size) {
         viewport.classList.remove('is-dragging');
-        if (gallery.classList.contains('is-swiping')) {
-          let page = Math.round(gallery.scrollLeft / Math.max(1, gallery.clientWidth));
-          if (event.type === 'pointerup') {
-            const distance = event.clientX - pointer.startX;
-            const elapsed = Math.max(1, performance.now() - pointer.startTime);
-            const threshold = Math.max(32, gallery.clientWidth * .12);
-            const quickFlick = Math.abs(distance) >= 22 && Math.abs(distance) / elapsed >= .35;
-            if (Math.abs(distance) >= threshold || quickFlick) {
-              page = swipeStartPage + (distance < 0 ? 1 : -1);
-            }
-          }
-          page = Math.max(0, Math.min(gallery.children.length - 1, page));
-          gallery.classList.remove('is-swiping');
-          gallery.scrollTo({left:page*gallery.clientWidth,behavior:reducedMotion.matches?'instant':'smooth'});
-        }
         // Mouse retains click-to-zoom; touch uses only the two-finger gesture.
         if (!moved && event.pointerType==='mouse' && event.type==='pointerup') setZoom(scale>1?1:2.5);
       }
