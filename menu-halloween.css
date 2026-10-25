@@ -142,6 +142,9 @@ body.theme-halloween .preview-gallery,
 body.theme-halloween .preview-slide,
 body.theme-halloween .image-viewport,
 body.theme-halloween .image-loading-status { background:var(--cream); }
+body.theme-halloween .preview-gallery,
+body.theme-halloween .preview-slide,
+body.theme-halloween .image-viewport { background:#fff; }
 body.theme-halloween .preview-category,
 body.theme-halloween .preview-heading h2,
 body.theme-halloween .preview-price,

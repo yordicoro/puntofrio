@@ -584,11 +584,11 @@ section.category{scroll-margin-top:calc(80px + env(safe-area-inset-top));}
 .preview-gallery{
   display:flex; width:100%; overflow-x:auto; scroll-snap-type:x mandatory;
   overscroll-behavior-x:contain; scrollbar-width:none;
-  background:var(--cream); touch-action:pan-x pan-y;
+  background:#fff; touch-action:pan-x pan-y;
 }
 .preview-gallery::-webkit-scrollbar{display:none;}
 .preview-gallery:focus-visible{outline-offset:-4px;}
-.preview-slide{flex:0 0 100%; min-width:0; scroll-snap-align:center; scroll-snap-stop:always; aspect-ratio:1/1; max-height:48dvh; background:var(--cream); display:grid; place-items:center;}
+.preview-slide{flex:0 0 100%; min-width:0; scroll-snap-align:center; scroll-snap-stop:always; aspect-ratio:1/1; max-height:48dvh; background:#fff; display:grid; place-items:center;}
 .preview-slide img{display:block; width:100%; height:100%; min-height:0; padding:0; object-fit:contain;}
 .preview-slide img[hidden]{display:none;}
 .image-fallback{padding:40px; color:var(--olive-deep); text-align:center; line-height:1.6;}
@@ -618,8 +618,8 @@ section.category{scroll-margin-top:calc(80px + env(safe-area-inset-top));}
 }
 
 /* Responsive image viewport with scrollable zoom in both directions. */
-.preview-slide{position:relative; display:block; aspect-ratio:auto; height:min(100vw, 48vh, 560px); height:min(100vw, 48dvh, 560px); overflow:hidden;}
-.image-viewport{width:100%; height:100%; touch-action:pan-x pan-y; overflow:hidden; background:var(--cream);}
+.preview-slide{position:relative; display:block; aspect-ratio:auto; height:min(100vw, 48vh, 560px); height:min(100vw, 48dvh, 560px); overflow:hidden; background:#fff;}
+.image-viewport{width:min(100vw, 48dvh, 560px); height:100%; margin-inline:auto; touch-action:pan-x pan-y; overflow:hidden; background:#fff;}
 .image-surface{width:100%; height:100%; display:grid; place-items:center;}
 .preview-slide .image-surface img{width:100%; height:100%; max-width:none; padding:0; object-fit:contain; cursor:zoom-in; user-select:none; -webkit-user-drag:none;}
 .image-viewport.is-zoomed{overflow:auto; overscroll-behavior:contain; touch-action:none;}
