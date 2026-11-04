@@ -244,3 +244,11 @@ body.theme-halloween .preview-dots button[aria-pressed="true"]::after { opacity:
   body.theme-halloween *::before,
   body.theme-halloween *::after { scroll-behavior:auto; }
 }
+
+body.theme-halloween .topbar .brand .highlights-launcher{background:conic-gradient(from 25deg,var(--orange),#F7B05D,#6E472A,var(--orange));}
+body.theme-halloween .highlights-dialog{border-color:rgba(219,123,43,.48);}
+body.theme-halloween .highlights-dialog::backdrop{background:rgba(28,24,19,.72);}
+body.theme-halloween .highlights-kicker{color:var(--orange);}
+body.theme-halloween .highlights-header h2,
+body.theme-halloween .highlight-caption-row p{color:var(--olive-deep);}
+body.theme-halloween .highlight-progress span[aria-current="true"]{background:var(--orange);}

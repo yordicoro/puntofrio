@@ -32,8 +32,9 @@
 
 <div class="topbar">
   <div class="brand">
-    <img src="LogoPuntoFrio.png" alt="Punto Frío" style="width:76px;height:44px;object-fit:cover;object-position:center 52%;border-radius:0;border:0;">
-    
+    <button class="highlights-launcher" id="openHighlights" type="button" aria-label="Abrir fotos destacadas de Punto Fr&iacute;o" aria-haspopup="dialog" aria-controls="highlightsDialog" aria-expanded="false" title="Fotos destacadas">
+      <img src="PF_logo.png" alt="">
+    </button>
   </div>
   <div class="topbar-contact" aria-label="Contacto y ubicaci&oacute;n">
     <a class="topbar-delivery" href="https://wa.me/51935627788" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Punto Fr&iacute;o por WhatsApp para delivery">
@@ -43,7 +44,7 @@
           <span class="topbar-delivery-prefix">Delivery</span>
           <span>935 627 788</span>
         </span>
-        <span class="topbar-delivery-hours">08:00 a. m. &ndash; 10:00 p. m.</span>
+        <span class="topbar-delivery-hours">08:00 a. m. &ndash; 22:00 p. m.</span>
       </span>
     </a>
     <a class="topbar-location" href="https://maps.app.goo.gl/sq9azFtNWfjnHmBv8" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicaci&oacute;n de Punto Fr&iacute;o en Google Maps" title="Ver ubicaci&oacute;n">
@@ -121,9 +122,9 @@
       </a>
       <!-- Sodas -->
       <a class="carousel-card" href="#sodas">
-        <img src="./img/sodas/soda_manzana.png" alt="Soda de manzana">
+        <img src="./img/sodas/soda_frutos_rojos.png" alt="Soda de frutos rojos">
         <div class="carousel-card-info">
-          <div class="carousel-card-name">Soda de manzana</div>
+          <div class="carousel-card-name">Soda de frutos rojos</div>
           <div class="carousel-card-price">15.00</div>
         </div>
       </a>
@@ -309,27 +310,45 @@
 <section class="category" id="iced-coffee">
   <h2>Iced Coffee</h2>
   <div class="item item-preview" data-images="img/iced_coffe/iced_americano.png">
-    <div class="item-info"><div class="item-name">Iced americano</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced americano</div>
+      <div class="item-desc">Agua, hielo, café</div>
+    </div>
     <div class="item-price">10.00</div>
   </div>
   <div class="item item-preview" data-images="img/iced_coffe/iced_caramelo.png">
-    <div class="item-info"><div class="item-name">Iced coffee con caramelo</div><div class="item-desc">Caramelo</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced coffee con caramelo</div>
+      <div class="item-desc">Caramelo, leche, café, hielo</div>
+    </div>
     <div class="item-price">14.00</div>
   </div>
   <div class="item item-preview active" data-images="img/iced_coffe/iced_chocolate.png">
-    <div class="item-info"><div class="item-name">Iced coffee con chocolate</div><div class="item-desc">chocolate</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced coffee con chocolate</div>
+      <div class="item-desc">Chocolate, leche, café, hielo</div>
+    </div>
     <div class="item-price">14.00</div>
   </div>
   <div class="item item-preview" data-images="img/iced_coffe/iced_coffe_avellanas.png">
-    <div class="item-info"><div class="item-name">Iced coffee con avellanas</div><div class="item-desc">avellanas</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced coffee con avellanas</div>
+      <div class="item-desc">Avellanas, leche, café, hielo</div>
+    </div>
     <div class="item-price">14.00</div>
   </div>
   <div class="item">
-    <div class="item-info"><div class="item-name">Iced coffee con vainilla</div><div class="item-desc">vainilla</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced coffee con vainilla</div>
+      <div class="item-desc">Vainilla, leche, café, hielo</div>
+    </div>
     <div class="item-price">14.00</div>
   </div>
   <div class="item item-preview" data-images="img/iced_coffe/iced_clasico.png">
-    <div class="item-info"><div class="item-name">Iced coffee clásico</div></div>
+    <div class="item-info">
+      <div class="item-name">Iced coffee clásico</div>
+      <div class="item-desc">Leche, hielo, café</div>
+    </div>
     <div class="item-price">13.00</div>
   </div>
 </section>
@@ -338,19 +357,19 @@
   <h2>Cold Brew</h2>
   <div class="divider"></div>
   <div class="item item-preview" data-images="img/iced_coffe/cold_brew_naranja.png">
-    <div class="item-info"><div class="item-name">Cold brew naranja</div><div class="item-desc">Naranja</div></div>
+    <div class="item-info"><div class="item-name">Cold brew naranja</div></div>
     <div class="item-price">15.00</div>
   </div>
   <div class="item item-preview" data-images="img/iced_coffe/cold_brew_fresa.png">
-    <div class="item-info"><div class="item-name">Cold brew fresa</div><div class="item-desc">fresa</div></div>
+    <div class="item-info"><div class="item-name">Cold brew fresa</div></div>
     <div class="item-price">15.00</div>
   </div>
   <div class="item">
-    <div class="item-info"><div class="item-name">Cold brew arándano</div><div class="item-desc">arándano</div></div>
+    <div class="item-info"><div class="item-name">Cold brew arándano</div></div>
     <div class="item-price">15.00</div>
   </div>
   <div class="item item-preview" data-images="img/iced_coffe/cold_brew_maracuya.png">
-    <div class="item-info"><div class="item-name">Cold brew maracuyá</div><div class="item-desc">maracuyá</div></div>
+    <div class="item-info"><div class="item-name">Cold brew maracuyá</div></div>
     <div class="item-price">15.00</div>
   </div>
 </section>
@@ -637,7 +656,7 @@
     <div class="item-info"><div class="item-name">Sándwich hawaiano</div><div class="item-desc">Pollo, huevo, jamón, queso y piña hawaiana</div></div>
     <div class="item-price">16.00</div>
   </div>
-  <div class="item">
+  <div class="item item-preview" data-images="img/sandwich/sandwich_clasico.png">
     <div class="item-info"><div class="item-name">Sándwich clásico</div><div class="item-desc">Pollo, jamón y queso</div></div>
     <div class="item-price">14.00</div>
   </div>
@@ -791,7 +810,21 @@
     <div class="item-price">15.00</div>
   </div>
   <div class="item">
-    <div class="item-info"><div class="item-name">Rollo salado</div><div class="item-desc">Tocino, queso, jamón y orégano</div></div>
+    <div class="item-info">
+      <div class="item-name">Rollo con tocino</div>
+    </div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item">
+    <div class="item-info">
+      <div class="item-name">Rollo con queso</div>
+    </div>
+    <div class="item-price">11.00</div>
+  </div>
+  <div class="item item-preview" data-images="img/rollos/rollito_jamon.png">
+    <div class="item-info">
+      <div class="item-name">Rollo con jamón y orégano</div>
+    </div>
     <div class="item-price">11.00</div>
   </div>
 </section>
@@ -828,6 +861,32 @@
   </nav>
 </footer>
 
+<dialog class="highlights-dialog" id="highlightsDialog" aria-labelledby="highlightsTitle">
+  <div class="highlights-shell">
+    <header class="highlights-header">
+      <div>
+        <p class="highlights-kicker">HISTORIAS DESTACADAS</p>
+        <h2 id="highlightsTitle">Punto Fr&iacute;o</h2>
+      </div>
+      <button class="highlights-close" id="closeHighlights" type="button" aria-label="Cerrar fotos destacadas" autofocus>&times;</button>
+    </header>
+    <div class="highlights-albums" id="highlightsAlbums" role="group" aria-label="Carpetas destacadas"></div>
+    <section class="highlight-story" aria-label="Fotos destacadas">
+      <div class="highlight-progress" id="highlightProgress" aria-hidden="true"></div>
+      <div class="highlight-stage" id="highlightStage" role="region" aria-label="Historia destacada" aria-live="polite">
+        <button class="highlight-nav highlight-previous" id="highlightPrevious" type="button" aria-label="Foto anterior">&#8249;</button>
+        <img id="highlightImage" alt="" decoding="async">
+        <button class="highlight-nav highlight-next" id="highlightNext" type="button" aria-label="Foto siguiente">&#8250;</button>
+      </div>
+      <div class="highlight-caption-row">
+        <p id="highlightCaption"></p>
+        <span id="highlightCount" aria-live="polite"></span>
+      </div>
+      <div class="highlight-thumbnails" id="highlightThumbnails" role="group" aria-label="Elegir foto destacada"></div>
+    </section>
+    <p class="highlight-help">Desliza las fotos o usa las flechas para recorrerlas.</p>
+  </div>
+</dialog>
 <dialog class="product-sheet" id="productSheet" aria-labelledby="previewName" aria-describedby="previewDescription previewNote">
   <div class="sheet-handle" aria-hidden="true"></div>
   <button class="sheet-close" type="button" aria-label="Cerrar vista del producto" autofocus>&times;</button>

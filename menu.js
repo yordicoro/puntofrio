@@ -23,6 +23,33 @@
   const dots = document.getElementById('previewDots');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const background = [...document.querySelectorAll('.hero, .topbar, main, footer, .carousel-section')];
+  const highlightLauncher = document.getElementById('openHighlights');
+  const highlightsDialog = document.getElementById('highlightsDialog');
+  const closeHighlights = document.getElementById('closeHighlights');
+  const highlightAlbums = document.getElementById('highlightsAlbums');
+  const highlightStage = document.getElementById('highlightStage');
+  const highlightImage = document.getElementById('highlightImage');
+  const highlightCaption = document.getElementById('highlightCaption');
+  const highlightCount = document.getElementById('highlightCount');
+  const highlightProgress = document.getElementById('highlightProgress');
+  const highlightThumbnails = document.getElementById('highlightThumbnails');
+  // Agrega los archivos en img/destacadas/ y registra su ruta y texto en este arreglo.
+  const featuredAlbums = [{
+    title: 'Productos',
+    cover: 'img/frappe_fruta/frappe_arandano.png',
+    photos: [
+      {src: 'img/frappe_fruta/frappe_arandano.png', caption: 'Frappe arándano'},
+      {src: 'img/frappe_fruta/frappe_coco.png', caption: 'Frappe coco'},
+      {src: 'img/frappe_fruta/frappe_fresa.png', caption: 'Frappe fresa'},
+      {src: 'img/frappe_cafe/frappe_caramelo.png', caption: 'Frappe caramelo'},
+      {src: 'img/frappe_cafe/frappe_clasico.png', caption: 'Frappe clásico'},
+      {src: 'img/frappe_cafe/frappe_oreo.png', caption: 'Frappe Oreo'}
+    ]
+  }];
+  let activeHighlightAlbum = 0;
+  let activeHighlightPhoto = 0;
+  let highlightTouchStartX = null;
+  let highlightLauncherForFocus = null;
   const links = [...document.querySelectorAll('#catnav a')];
   const sections = [...document.querySelectorAll('section.category')];
   let savedScroll = 0;
@@ -33,6 +60,116 @@
   let closing = false;
   let closeTimer;
 
+  function renderHighlightAlbums() {
+    highlightAlbums.replaceChildren();
+    featuredAlbums.forEach((album, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-pressed', String(index === activeHighlightAlbum));
+      button.setAttribute('aria-label', `Abrir carpeta ${album.title}`);
+      const cover = document.createElement('span');
+      cover.className = 'highlights-album-cover';
+      const image = document.createElement('img');
+      image.src = album.cover || album.photos[0]?.src || 'PF_logo.png';
+      image.alt = '';
+      cover.appendChild(image);
+      const label = document.createElement('span');
+      label.textContent = album.title;
+      button.append(cover, label);
+      button.addEventListener('click', () => {
+        activeHighlightAlbum = index;
+        activeHighlightPhoto = 0;
+        renderHighlights();
+      });
+      highlightAlbums.appendChild(button);
+    });
+  }
+  function renderHighlightPhotos() {
+    const album = featuredAlbums[activeHighlightAlbum];
+    const photos = album?.photos || [];
+    const photo = photos[activeHighlightPhoto];
+    highlightProgress.replaceChildren();
+    highlightThumbnails.replaceChildren();
+    photos.forEach((entry, index) => {
+      const progress = document.createElement('span');
+      if (index === activeHighlightPhoto) progress.setAttribute('aria-current', 'true');
+      highlightProgress.appendChild(progress);
+      const thumb = document.createElement('button');
+      thumb.type = 'button';
+      thumb.setAttribute('aria-pressed', String(index === activeHighlightPhoto));
+      thumb.setAttribute('aria-label', `Ver ${entry.caption || `foto ${index + 1}`}`);
+      const thumbImage = document.createElement('img');
+      thumbImage.src = entry.src;
+      thumbImage.alt = '';
+      thumb.appendChild(thumbImage);
+      thumb.addEventListener('click', () => {
+        activeHighlightPhoto = index;
+        renderHighlightPhotos();
+      });
+      highlightThumbnails.appendChild(thumb);
+    });
+    highlightImage.hidden = !photo;
+    if (photo) {
+      highlightImage.src = photo.src;
+      highlightImage.alt = photo.caption || `${album.title}, foto ${activeHighlightPhoto + 1}`;
+      highlightCaption.textContent = photo.caption || album.title;
+      highlightCount.textContent = `${activeHighlightPhoto + 1} / ${photos.length}`;
+    } else {
+      highlightImage.removeAttribute('src');
+      highlightCaption.textContent = 'Pronto agregaremos fotos destacadas.';
+      highlightCount.textContent = '';
+    }
+    const previous = document.getElementById('highlightPrevious');
+    const next = document.getElementById('highlightNext');
+    previous.disabled = photos.length < 2;
+    next.disabled = photos.length < 2;
+  }
+  function renderHighlights() {
+    renderHighlightAlbums();
+    renderHighlightPhotos();
+  }
+  function stepHighlightPhoto(direction) {
+    const photos = featuredAlbums[activeHighlightAlbum]?.photos || [];
+    if (photos.length < 2) return;
+    activeHighlightPhoto = (activeHighlightPhoto + direction + photos.length) % photos.length;
+    renderHighlightPhotos();
+  }
+  if (highlightLauncher && highlightsDialog) {
+    highlightLauncher.addEventListener('click', () => {
+      if (sheet.open || drawer.classList.contains('open') || highlightsDialog.open) return;
+      highlightLauncherForFocus = highlightLauncher;
+      renderHighlights();
+      lockPage();
+      highlightsDialog.showModal();
+      highlightLauncher.setAttribute('aria-expanded', 'true');
+      closeHighlights.focus({preventScroll: true});
+    });
+    closeHighlights.addEventListener('click', () => highlightsDialog.close());
+    document.getElementById('highlightPrevious').addEventListener('click', () => stepHighlightPhoto(-1));
+    document.getElementById('highlightNext').addEventListener('click', () => stepHighlightPhoto(1));
+    highlightStage.addEventListener('touchstart', event => {
+      highlightTouchStartX = event.changedTouches[0]?.clientX ?? null;
+    }, {passive: true});
+    highlightStage.addEventListener('touchend', event => {
+      if (highlightTouchStartX === null) return;
+      const distance = event.changedTouches[0].clientX - highlightTouchStartX;
+      if (Math.abs(distance) >= 42) stepHighlightPhoto(distance < 0 ? 1 : -1);
+      highlightTouchStartX = null;
+    }, {passive: true});
+    highlightsDialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); stepHighlightPhoto(-1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); stepHighlightPhoto(1); }
+    });
+    highlightsDialog.addEventListener('click', event => {
+      if (event.target === highlightsDialog) highlightsDialog.close();
+    });
+    highlightsDialog.addEventListener('close', () => {
+      highlightLauncher.setAttribute('aria-expanded', 'false');
+      unlockPage();
+      highlightLauncherForFocus?.focus({preventScroll: true});
+      highlightLauncherForFocus = null;
+    });
+  }
   // One shared scroll lock for either overlay; restore inline styles and position.
   function lockPage() {
     savedScroll = window.scrollY;
@@ -301,7 +438,7 @@
 
   function openPreview(item, source = item) {
     const paths = imagePaths(item);
-    if (!paths.length || sheet.open || closing) return;
+    if (!paths.length || sheet.open || highlightsDialog?.open || closing) return;
     closeDrawer(false);
     opener = source;
     const name = item.querySelector('.item-name').textContent.trim();
