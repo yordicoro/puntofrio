@@ -39,7 +39,7 @@ body.theme-halloween .seasonal-label::after {
 
 body.theme-halloween .topbar { background:var(--paper); }
 body.theme-halloween .topbar-delivery { color:var(--olive-deep); }
-body.theme-halloween .topbar-delivery-hours { color:#6E614E; }
+body.theme-halloween .topbar-delivery-hours { color:var(--muted); }
 body.theme-halloween .topbar-location {
   color:var(--orange);
   background:var(--cream-2);
@@ -53,7 +53,7 @@ body.theme-halloween .topbar .brand span { color:var(--olive-deep); }
 body.theme-halloween .menu-overlay { background:rgba(42,33,24,.58); }
 body.theme-halloween .menu-drawer { background:var(--paper); }
 body.theme-halloween .menu-drawer-head {
-  background:var(--green-deep);
+  background:var(--sand);
   color:var(--olive-deep);
 }
 body.theme-halloween .menu-drawer-head button { color:var(--olive-deep); }
@@ -92,7 +92,7 @@ body.theme-halloween section.category .divider {
   background:linear-gradient(90deg, var(--orange) 0%, transparent 76%);
 }
 body.theme-halloween .item-name { color:var(--ink); }
-body.theme-halloween .item-desc { color:#6E614E; }
+body.theme-halloween .item-desc { color:var(--muted); }
 body.theme-halloween .item-price,
 body.theme-halloween .item-price::before,
 body.theme-halloween .carousel-card-price,
@@ -110,7 +110,7 @@ body.theme-halloween .carousel-card.active {
 }
 
 body.theme-halloween footer {
-  background:var(--green-deep);
+  background:var(--sand);
   color:var(--olive-deep);
 }
 body.theme-halloween .footer-intro,
@@ -151,7 +151,7 @@ body.theme-halloween .preview-price,
 body.theme-halloween .image-fallback,
 body.theme-halloween .image-loading-status { color:var(--olive-deep); }
 body.theme-halloween #previewDescription,
-body.theme-halloween .preview-note { color:#6E614E; }
+body.theme-halloween .preview-note { color:var(--muted); }
 body.theme-halloween .preview-dots button[aria-pressed="true"]::after { background:var(--orange); }
 body.theme-halloween :where(button, a, [tabindex]):focus-visible {
   outline-color:var(--orange);
